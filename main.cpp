@@ -13,21 +13,43 @@
 
 #include <iostream>
 #include <pthread.h>
+#include <stdlib.h>
+#include <math.h>
 
 using namespace std;
 
-struct LinkedList{
+float RandomFloat(float min, float max) {
+    float r = (float) rand() / (float) RAND_MAX;
+    return min + r * (max - min);
+}
+
+int randInt(int min,int max){
+    return min + (rand() % (int)(max - min + 1));
+}
+
+struct LinkedList {
     int value;
     LinkedList *next;
 };
 
 LinkedList *linkedList;
 
-bool Member(){
-    
+bool Member() {
+
+}
+
+void Insert() {
+    LinkedList *temp = new LinkedList();
+    temp->value=int(RandomFloat(0,pow(2,16)-1));
+}
+
+void Initialize() {
+    linkedList = new LinkedList();
+    linkedList->value = RandomFloat(0,pow(2,16)-1);
 }
 
 int main() {
-
+    cout<< "Without pthreads"<<endl;
+    cout<<int(randInt(0,pow(2,16)-1))<<endl;
     return 0;
 }
