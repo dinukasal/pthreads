@@ -16,29 +16,18 @@
 
 using namespace std;
 
-
 struct LinkedList{
     int value;
     LinkedList *next;
 };
 
+LinkedList *linkedList;
+
 bool Member(){
     
 }
 
-void *print_message(void*){
-
-    cout << "Threading\n";
-}
-
-
-
 int main() {
-
-    pthread_t t1;
-
-    pthread_create(&t1, NULL, &print_message, NULL);
-    cout << "Hello";
 
     return 0;
 }
